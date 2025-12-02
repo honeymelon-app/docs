@@ -22,6 +22,7 @@ export default defineConfig({
 
     // https://vitepress.dev/reference/default-theme-config
     nav: [
+      { text: 'Home', link: 'https://honeymelon.com' },
       { text: 'Guide', link: '/guide/getting-started' },
       { text: 'Architecture', link: '/architecture/overview' },
       { text: 'Development', link: '/development/contributing' },
@@ -77,6 +78,7 @@ export default defineConfig({
           items: [
             { text: 'Overview', link: '/architecture/overview' },
             { text: 'Conversion Pipeline', link: '/architecture/pipeline' },
+            { text: 'Pipeline Internals', link: '/architecture/pipeline-internals' },
             { text: 'FFmpeg Integration', link: '/architecture/ffmpeg' },
             { text: 'State Management', link: '/architecture/state' },
             { text: 'Tech Stack', link: '/architecture/tech-stack' },
