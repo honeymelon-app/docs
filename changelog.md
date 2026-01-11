@@ -11,6 +11,12 @@ All notable changes to Honeymelon are documented here. The format follows [Keep 
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-01-11
+
+### Fixed
+
+- macOS close (red button) and quit (Cmd+Q) now respond reliably by adding Rust-side fallbacks for window close and app exit
+
 ## [0.1.1] - 2026-01-06
 
 ### Added
