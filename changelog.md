@@ -11,6 +11,12 @@ All notable changes to Honeymelon are documented here. The format follows [Keep 
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-01-12
+
+### Fixed
+
+- Skip link for keyboard navigation now has proper tabindex attribute to prevent focus trap
+
 ## [0.1.2] - 2026-01-11
 
 ### Fixed
