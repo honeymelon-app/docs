@@ -9,7 +9,22 @@ description: Release history of Honeymelon with highlights for each public versi
 
 All notable changes to Honeymelon are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [1.0.0] - 2026-01-18
+
+### Added
+
+- First stable production release of Honeymelon
+- Enterprise-grade release audit with comprehensive quality gates
+- Expanded job lifecycle test coverage for state transitions
+
+### Changed
+
+- Promoted from beta (0.x) to stable (1.0) after passing all release criteria:
+  - 670 frontend tests and 121 backend tests passing
+  - Zero production security vulnerabilities
+  - Full CI/CD pipeline with pre-release validation
+  - Ed25519 cryptographic license verification
+  - Hardened macOS runtime with minimal entitlements
 
 ## [0.1.3] - 2026-01-12
 
