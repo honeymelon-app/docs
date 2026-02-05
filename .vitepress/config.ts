@@ -28,7 +28,7 @@ export default defineConfig({
       { text: 'Development', link: '/development/contributing' },
       { text: 'Legal', link: '/legal/license-compliance' },
       {
-        text: 'v0.0.4',
+        text: 'v2.0.0',
         items: [
           { text: 'Changelog', link: '/changelog' },
           { text: 'Roadmap', link: '/roadmap' },
@@ -66,9 +66,7 @@ export default defineConfig({
         {
           text: 'Legal & Privacy',
           items: [
-            { text: 'License Activation', link: '/guide/licensing' },
             { text: 'Privacy Policy', link: '/guide/privacy' },
-            { text: 'EULA', link: '/legal/eula' },
           ],
         },
       ],

@@ -23,7 +23,6 @@ docs/
 │   ├── batch-processing.md
 │   ├── preferences.md
 │   ├── supported-formats.md
-│   ├── licensing.md
 │   └── troubleshooting.md
 │
 ├── architecture/            # Technical architecture

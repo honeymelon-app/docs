@@ -9,6 +9,59 @@ description: Release history of Honeymelon with highlights for each public versi
 
 All notable changes to Honeymelon are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and the project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2026-02-05
+
+### Changed
+
+- **BREAKING**: Transitioned from proprietary license to GNU General Public License v3.0 or later (GPL-3.0-or-later)
+- **BREAKING**: Removed all proprietary licensing and activation code from codebase
+- Updated all license references throughout the codebase (package.json, Cargo.toml, README, AboutDialog)
+- Repository is now fully open-source under GPLv3
+- Changed repository visibility from private to public
+- Removed proprietary license restrictions; software now freely distributable and modifiable under GPL terms
+
+### Added
+
+- GPL v3 copyright headers to all main source files (TypeScript, Vue, Rust)
+- Developer Certificate of Origin (DCO) requirement for all contributions
+- NOTICE file documenting trademarks and attribution requirements
+- THIRD_PARTY_NOTICES.md with comprehensive dependency licensing information
+- License compliance documentation for FFmpeg LGPL process separation
+- SHA256 checksum verification for FFmpeg binary downloads
+- `docs/FFMPEG_SOURCES.md` - Comprehensive FFmpeg installation and sourcing guide
+- `GPL_V3_READINESS.md` - Complete open source readiness checklist
+- `OPEN_SOURCE_VERIFICATION.md` - Final verification report
+- PRs Welcome badge to README
+
+### Removed
+
+- License key validation system
+- License activation dialogs and UI components
+- License activation strings from all locales (EN, FR, ES, DE, RU)
+- `isBypassLicensing()` function (replaced with `isDevelopmentMode()`)
+- All references to proprietary licensing in documentation and comments
+- **Documentation cleanup**:
+  - `docs/legal/eula.md` - Proprietary End-User License Agreement
+  - `docs/legal/commercial-license.md` - Commercial licensing terms
+  - `docs/guide/licensing.md` - License activation guide with Ed25519 verification instructions
+  - All EULA references from `docs/ROADMAP.md`, `docs/development/enhancement-plan.md`, `docs/changelog.md`
+  - Proprietary license references from `docs/architecture/ffmpeg.md` and `docs/development/contributing.md`
+
+### Security
+
+- Updated `lodash-es` from 4.17.21 to 4.17.23 to address prototype pollution vulnerability in `_.unset` and `_.omit` functions (CVE-2020-8203)
+- Enhanced FFmpeg binary download security with checksum verification
+- Added TruffleHog secret scanning to CI/CD pipeline
+
+### Documentation
+
+- Updated CONTRIBUTING.md with open-source contribution guidelines and DCO
+- Updated SECURITY.md to reflect open-source context
+- Updated README.md Legal & Licensing section for GPL-3.0-or-later
+- Added trademark usage guidelines in NOTICE file
+- Enhanced scripts/README.md with licensing and security information
+- Fixed outdated MIT reference in LICENSES/FFMPEG-LGPL.txt
+
 ## [1.0.0] - 2026-01-18
 
 ### Added
