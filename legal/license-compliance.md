@@ -1,11 +1,11 @@
 ---
-title: License Compliance Guide
-description: Technical guidance for distributing Honeymelon while fulfilling open-source licensing obligations.
+title: Open Source License Compliance Guide
+description: Technical guidance for distributing Honeymelon (GPL v3) while fulfilling open-source licensing obligations.
 ---
 
-# License Compliance Guide for Honeymelon
+# Open Source License Compliance Guide for Honeymelon
 
-This document provides technical guidance for ensuring Honeymelon remains compliant with all open-source licenses when distributed commercially.
+This document provides technical guidance for ensuring Honeymelon remains compliant with GPL v3 and all third-party open-source licenses.
 
 ---
 
@@ -16,11 +16,11 @@ Honeymelon's licensing compliance is built on a fundamental architectural princi
 ```
 ┌─────────────────────────────────────┐
 │   Honeymelon Application            │
-│   (MIT License)                     │
+│   (GPL-3.0-or-later)                │
 │                                     │
-│   - Vue.js UI                       │
+│   - Vue.js UI (MIT)                 │
 │   - Tauri (MIT/Apache-2.0)          │
-│   - TypeScript/Rust code            │
+│   - TypeScript/Rust code (GPL v3)   │
 │   - Job orchestration               │
 └──────────────┬──────────────────────┘
                │
@@ -29,7 +29,7 @@ Honeymelon's licensing compliance is built on a fundamental architectural princi
                ↓
 ┌─────────────────────────────────────┐
 │   FFmpeg Binary                     │
-│   (LGPL v2.1)                       │
+│   (LGPL v2.1+)                      │
 │                                     │
 │   - Runs as separate process        │
 │   - No shared memory                │
@@ -40,11 +40,11 @@ Honeymelon's licensing compliance is built on a fundamental architectural princi
 
 ---
 
-## LGPL Compliance: Technical Implementation
+## GPL v3 + LGPL Compliance: Technical Implementation
 
 ### How Honeymelon Executes FFmpeg
 
-**File**: runner modules under `src-tauri/src/runner` (formerly `src-tauri/src/ffmpeg_runner.rs`)
+**File**: runner modules under `src-tauri/src/runner`
 
 ```rust
 // FFmpeg is spawned as a separate process
@@ -63,21 +63,22 @@ ffmpeg -i input.mp4 output.mp4
 
 ```
 
-### What This Means Legally
+### GPL v3 Compatibility with LGPL FFmpeg
 
-| Technical Approach                              | Legal Effect             |
-| ----------------------------------------------- | ------------------------ |
-| Static linking to libavcodec, libavformat, etc. | Your app becomes LGPL    |
-| Dynamic linking to .dylib files                 | Complex LGPL obligations |
-| **Process execution (Honeymelon's approach)**   | **Your app stays MIT**   |
+| Technical Approach                              | License Compatibility                          |
+| ----------------------------------------------- | ---------------------------------------------- |
+| Static linking to libavcodec, libavformat, etc. | Compatible - combined work is GPL v3           |
+| Dynamic linking to .dylib files                 | Compatible - LGPL libraries with GPL main work |
+| **Process execution (Honeymelon's approach)**   | **Compatible - separate works**                |
 
-### LGPL Section 6 Exemption
+### Why Process Separation
 
-From LGPL v2.1, Section 6:
+**Process separation maintains clear license boundaries**:
 
-> "As an exception to the Sections above, you may also combine or link a 'work that uses the Library' with the Library to produce a work containing portions of the Library, and distribute that work under terms of your choice..."
-
-**But Honeymelon doesn't need this exception** because we're not combining or linking at all. We're using FFmpeg as a completely separate tool.
+- Honeymelon remains pure GPL v3 (no LGPL code mixed in)
+- FFmpeg remains pure LGPL (can be replaced by users)
+- Users can update FFmpeg independently
+- No need to provide FFmpeg source code separately (readily available)
 
 ---
 
@@ -86,15 +87,14 @@ From LGPL v2.1, Section 6:
 ### Required Files in App Bundle
 
 ```
-
 Honeymelon.app/
 └── Contents/
     ├── MacOS/
-    │   └── Honeymelon              # Your app (MIT)
+    │   └── Honeymelon              # Your app (GPL v3)
     ├── Resources/
-    │   ├── LICENSE.txt             #  REQUIRED: Honeymelon MIT License
-    │   ├── FFMPEG-LICENSE.txt      #  REQUIRED: FFmpeg LGPL License
-    │   ├── THIRD-PARTY-NOTICES.txt #  REQUIRED: All dependencies
+    │   ├── LICENSE.txt             # ✅ REQUIRED: Honeymelon GPL v3 License
+    │   ├── FFMPEG-LICENSE.txt      # ✅ REQUIRED: FFmpeg LGPL License
+    │   ├── THIRD-PARTY-NOTICES.txt # ✅ REQUIRED: All dependencies
     │   └── bin/                     # Optional: Bundled FFmpeg
     │       ├── ffmpeg              # LGPL binary
     │       └── ffprobe             # LGPL binary
@@ -123,7 +123,7 @@ cp LICENSE "$RESOURCES/LICENSE.txt"
 cp LICENSES/FFMPEG-LGPL.txt "$RESOURCES/FFMPEG-LICENSE.txt"
 cp THIRD_PARTY_NOTICES.md "$RESOURCES/THIRD-PARTY-NOTICES.txt"
 
-echo " License files bundled successfully"
+echo "✅ License files bundled successfully"
 
 ```
 
@@ -158,8 +158,8 @@ This ensures license files are automatically included when running `npm run taur
 ### Implementation Checklist
 
 - [ ] Add "Licenses" menu item to "About" window
-- [ ] Display LICENSE (MIT) for Honeymelon
-- [ ] Display FFMPEG-LICENSE.txt (LGPL)
+- [ ] Display LICENSE (GPL v3) for Honeymelon
+- [ ] Display FFMPEG-LICENSE.txt (LGPL v2.1+)
 - [ ] Display THIRD_PARTY_NOTICES.md
 - [ ] Make it accessible via keyboard shortcut
 
@@ -192,10 +192,10 @@ onMounted(async () => {
 
 <template>
   <div class="licenses-dialog">
-    <h2>Honeymelon License (MIT)</h2>
+    <h2>Honeymelon License (GPL v3)</h2>
     <pre>{{ licenses.honeymelon }}</pre>
 
-    <h2>FFmpeg License (LGPL v2.1)</h2>
+    <h2>FFmpeg License (LGPL v2.1+)</h2>
     <pre>{{ licenses.ffmpeg }}</pre>
 
     <h2>Third-Party Notices</h2>
@@ -211,10 +211,9 @@ onMounted(async () => {
 ### What to Include in the DMG
 
 ```
-
-Honeymelon_0.1.0_aarch64.dmg
-├── Honeymelon.app              # Main application
-├── LICENSE.txt                 # Honeymelon MIT License
+Honeymelon_2.0.0_aarch64.dmg
+├── Honeymelon.app              # Main application (GPL v3)
+├── LICENSE.txt                 # Honeymelon GPL v3 License
 ├── FFMPEG-LICENSE.txt          # FFmpeg LGPL License
 └── THIRD_PARTY_NOTICES.txt     # All dependencies
 
@@ -228,7 +227,7 @@ Honeymelon_0.1.0_aarch64.dmg
 #!/bin/bash
 # Create DMG with license files
 
-VERSION="0.1.0"
+VERSION="2.0.0"
 DMG_DIR="dmg-staging"
 
 # Clean and create staging directory
@@ -249,7 +248,7 @@ hdiutil create -volname "Honeymelon" \
   -ov -format UDZO \
   "Honeymelon_${VERSION}_aarch64.dmg"
 
-echo " DMG created with all license files"
+echo "✅ DMG created with all license files"
 
 ```
 
@@ -300,7 +299,7 @@ To minimize patent and licensing concerns, build FFmpeg with:
 Before each release, verify:
 
 ```bash
-# 1. Check that FFmpeg is not linked
+# 1. Check that FFmpeg is not linked (optional verification)
 otool -L Honeymelon.app/Contents/MacOS/Honeymelon
 # Should NOT show any libavcodec, libavformat, etc.
 
@@ -309,7 +308,7 @@ ls -la Honeymelon.app/Contents/Resources/
 # Should show LICENSE.txt, FFMPEG-LICENSE.txt, etc.
 
 # 3. Check DMG contents
-hdiutil mount Honeymelon_0.1.0_aarch64.dmg
+hdiutil mount Honeymelon_2.0.0_aarch64.dmg
 ls -la /Volumes/Honeymelon/
 # Should show license files in DMG root
 
@@ -322,54 +321,81 @@ ls -la /Volumes/Honeymelon/
 
 ## Legal Q&A for Developers
 
-### Q: Can I statically link FFmpeg to make distribution easier?
+### Q: Can I statically link FFmpeg with a GPL v3 application?
 
-**A**: **NO**. This would make your entire app LGPL and require you to provide source code or object files to users. Stick with process execution.
+**A**: **YES**. GPL v3 is compatible with LGPL, so you could link FFmpeg libraries if needed. However, process separation is simpler and maintains clearer boundaries between Honeymelon code and FFmpeg.
 
 ### Q: What if I use FFmpeg libraries via FFI (Foreign Function Interface)?
 
-**A**: This is effectively dynamic linking and has complex LGPL obligations. Avoid this approach.
+**A**: This is dynamic linking and is fully compatible with GPL v3 + LGPL. Process separation is still preferred for simplicity.
 
 ### Q: Can I modify FFmpeg source code?
 
-**A**: Yes, but then you MUST:
+**A**: Yes. If you do, you MUST:
 
 1. Provide modified FFmpeg source code to users
 2. Document your modifications
-3. Still follow LGPL terms for the modified version
+3. Follow LGPL terms for the modified version
 
-It's easier to NOT modify FFmpeg.
+It's easier to NOT modify FFmpeg and use it as-is.
+
+### Q: Can others redistribute Honeymelon commercially?
+
+**A**: **YES**. GPL v3 explicitly allows commercial distribution. Anyone can:
+
+- Download the source code
+- Build and distribute binaries
+- Charge money for distribution
+- Modify and redistribute
+
+They MUST provide source code and maintain GPL v3 licensing.
 
 ### Q: What about linking to other GPL/LGPL libraries?
 
-**A**: Each library has its own license. If you use process separation (like with FFmpeg), you're safe. If you link, check each library's specific terms.
+**A**: GPL v3 is compatible with:
+- LGPL v2.1, v3 (one-way compatibility)
+- Apache License 2.0
+- MIT License
+- BSD licenses
+
+All dependencies remain under their original licenses.
 
 ---
 
 ## Summary
 
-**Honeymelon's approach is compliant because**:
+**Honeymelon's GPL v3 compliance**:
 
-1. FFmpeg runs as a separate process (no linking)
-2. License files are included with distribution
-3. No FFmpeg source modifications
-4. Patent-risky codecs use hardware encoders
+1. ✅ Full GPL v3 license text in LICENSE file
+2. ✅ Copyright headers in all source files
+3. ✅ FFmpeg runs as separate process (LGPL v2.1+)
+4. ✅ License files included with distribution
+5. ✅ No FFmpeg source modifications
+6. ✅ All dependencies GPL-compatible (MIT, Apache 2.0, ISC, BSD)
 
 **To stay compliant**:
 
 1. Always include LICENSE, FFMPEG-LICENSE.txt, and THIRD_PARTY_NOTICES.md
-2. Never link FFmpeg libraries
+2. Maintain GPL v3 copyright headers in source files
 3. Use bundle scripts to automate license inclusion
 4. Display licenses in the app UI
+5. Provide source code access (GitHub repository)
 
-**This allows commercial sale** without requiring:
+**GPL v3 Rights**:
 
-- Open-sourcing your code
-- Providing source to customers
-- Special permissions from FFmpeg developers
+Users can:
+- Use Honeymelon for any purpose (commercial or personal)
+- Study and modify the source code
+- Redistribute original or modified versions
+- Charge money for distribution
+
+Users must:
+- Provide source code with distributions
+- Maintain GPL v3 licensing on derivatives
+- Include copyright and license notices
 
 ---
 
-**Questions?** Consult with a software licensing attorney for your specific situation.
+**Questions?** See the [GNU GPL v3 FAQ](https://www.gnu.org/licenses/gpl-faq.html) or consult with a software licensing attorney.
 
-**Last Updated**: 2025-10-30
+**Last Updated**: 2025-01-15

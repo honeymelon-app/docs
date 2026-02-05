@@ -107,8 +107,6 @@ export default defineConfig({
           text: 'Legal',
           items: [
             { text: 'License Compliance', link: '/legal/license-compliance' },
-            { text: 'EULA', link: '/legal/eula' },
-            { text: 'Commercial License', link: '/legal/commercial-license' },
             { text: 'Third Party Notices', link: '/legal/third-party-notices' },
           ],
         },

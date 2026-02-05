@@ -13,7 +13,7 @@ Use it to understand where the app is going, how releases are sequenced, and whi
 
 Honeymelon follows semantic versioning. Each release trains on three pillars:
 
-- **Foundation**: Platform stability, licensing, commercial readiness
+- **Foundation**: Platform stability, licensing, open source readiness
 - **Experience**: User workflow improvements and polish
 - **Expansion**: New codecs, formats, automation, and integrations
 
@@ -26,13 +26,12 @@ Honeymelon follows semantic versioning. Each release trains on three pillars:
 - Remux-first conversion pipeline with probe > plan > execute stages
 - FFmpeg capability detection and automatic preset availability
 - Batch job queue with concurrency controls and progress telemetry
-- License activation flow with offline verification and event hooks
 - Vue 3 + Tauri 2 desktop shell with native macOS styling
-- Complete legal package (EULA, privacy policy, third-party notices)
+- GPL v3 open source licensing with complete legal documentation
 
 ### Outstanding Follow-Ups
 
-- Harden the Playwright suite to cover activation, queue exclusivity, and preset switching end-to-end
+- Harden the Playwright suite to cover queue exclusivity and preset switching end-to-end
 - Restructure `src-tauri/src/lib.rs` into domain submodules and extract the runner registry for better backend testability
 
 ## Version 0.1.0 - Polish & Testing Infrastructure
@@ -89,15 +88,15 @@ Honeymelon follows semantic versioning. Each release trains on three pillars:
 - Plugin concept exploration (minimal API surface, securely sandboxed)
 - Remote notification support for long-running batches
 
-## Version 1.0.0 - Stability & Commercial Launch
+## Version 1.0.0 - Stability & Production Release
 
 **Target**: Q4 2026 / Q1 2027
 
 ### Major Goals
 
-- Freeze-breaking bugs and eliminate crashers through telemetry & testing
+- Freeze-breaking bugs and eliminate crashers through testing
 - Streamline notarization, code signing, and update delivery pipeline
-- Finalize documentation, onboarding, and customer support processes
+- Finalize documentation, onboarding, and community support processes
 - Performance benchmarking and optimization for 4K and HDR workloads
 
 ### Key Deliverables

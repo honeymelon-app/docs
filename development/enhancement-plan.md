@@ -26,9 +26,9 @@ editLink: false
 ### Legal & Documentation
 
 - [x] **`BUILD.md`** — Complete build/signing/notarization guide (17KB)
-- [x] **`EULA.md`** — End-user license for commercial distribution (15KB)
+- [x] **GPL v3 transition** — Removed proprietary EULA, updated all docs to GPL-3.0-or-later
 - [x] **`PRIVACY.md`** — Privacy policy (11KB)
-- [x] **License consistency** — Fixed MIT references in `CONTRIBUTING.md` line 378
+- [x] **License consistency** — Updated all references from MIT/Proprietary to GPL v3
 - [x] **`third-party-notices.md`** — Fixed date typo (2025-10-30 > 2024-10-30)
 - [x] **`.github/SUPPORT.md`** — Support channels and SLAs (5.9KB)
 
@@ -46,7 +46,7 @@ editLink: false
 
 ### VitePress Integration
 
-- [x] **Updated config** — Added Roadmap, Support, Privacy, EULA, ADR, Build to navigation
+- [x] **Updated config** — Added Roadmap, Support, Privacy, ADR, Build to navigation
 - [x] **Created pages** — 6 new VitePress docs pages linking to root documentation
 - [x] **`docs/ROADMAP.md`** — Version roadmap through 2.0+ (12KB)
 - [x] **`docs/architecture/adr.md`** — ADR guidance, template, and index (6.3KB)
@@ -100,8 +100,7 @@ editLink: false
 
 - [ ] **API docs** — TypeDoc (TS) + `rustdoc` (Rust)
 - [ ] **ADRs** — Follow `docs/architecture/adr.md`; store decisions in `docs/adr/`
-- [ ] **`ROADMAP.md`** — Public feature roadmap
-- [ ] **Commercial license template** — For paid distribution
+- [x] **`ROADMAP.md`** — Public feature roadmap
 - [ ] **`SUPPORT.md`** — Support policy & channels
 - [ ] **Deployment guide** — Production checklist
 
@@ -134,7 +133,7 @@ editLink: false
 
 - **Testing:** Coverage **34.82% > 80%+**
 - **CI/CD:** All checks blocking; no `continue-on-error`
-- **Legal:** EULA, Privacy Policy, copyright
+- **Legal:** GPL v3 open source, Privacy Policy, copyright headers
 - **Docs:** `BUILD.md`, API docs, ADRs, `ROADMAP.md`
 - **Security:** CodeQL on; audits blocking; `git-secrets` active
 - **Code Quality:** commitlint, import ordering, stricter TS

@@ -25,11 +25,11 @@ FFmpeg is licensed under LGPL (Lesser General Public License), which imposes res
 - Communication via stdin/stdout/stderr
 - File-based input/output
 
-Honeymelon uses **out-of-process execution exclusively**, enabling proprietary licensing while using FFmpeg.
+Honeymelon uses **out-of-process execution exclusively**, ensuring clean license boundaries and maintaining GPL v3 compatibility with LGPL FFmpeg.
 
 ### Benefits
 
-1. **Legal Compliance**: No LGPL contamination of proprietary code
+1. **Legal Compliance**: Clean separation between GPL v3 code and LGPL libraries
 2. **Process Isolation**: FFmpeg crashes don't affect the app
 3. **Version Flexibility**: Easily swap FFmpeg versions
 4. **Resource Management**: Independent process resource limits

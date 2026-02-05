@@ -44,7 +44,7 @@ Only when necessary (incompatible codecs, quality requirements, or user preferen
 
 ### Technical Excellence
 
-- **FFmpeg Process Isolation**: Ensures LGPL compliance for commercial distribution
+- **FFmpeg Process Isolation**: Ensures LGPL compliance for free distribution
 - **Type-Safe Architecture**: TypeScript and Rust provide compile-time safety
 - **Reactive State Management**: Pinia stores with discriminated union types
 - **Comprehensive Testing**: Unit tests, Rust tests, and pipeline coverage

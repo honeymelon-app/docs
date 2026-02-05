@@ -526,4 +526,4 @@ RUST_LOG=debug npm run tauri:dev
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the same license as the project (Proprietary).
+By contributing, you agree that your contributions will be licensed under the GNU General Public License v3.0 or later (GPL-3.0-or-later), the same license as the project. See [LICENSE](../../LICENSE) for the full license text.

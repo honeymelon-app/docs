@@ -43,8 +43,7 @@ For questions, ideas, and community discussion:
 For specific inquiries:
 
 - **Security vulnerabilities**: See our [Security Policy](https://github.com/honeymelon-app/honeymelon/security/policy)
-- **Licensing questions**: Contact [tjthavarshan@gmail.com](mailto:tjthavarshan@gmail.com)
-- **Commercial support**: Contact [tjthavarshan@gmail.com](mailto:tjthavarshan@gmail.com)
+- **General questions**: Contact [tjthavarshan@gmail.com](mailto:tjthavarshan@gmail.com)
 
 ## Expected Response Times
 

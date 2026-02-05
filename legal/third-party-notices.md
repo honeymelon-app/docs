@@ -7,6 +7,10 @@ description: Attribution requirements and license summaries for third-party comp
 
 This file contains the licenses and notices for third-party software included with or used by Honeymelon.
 
+**Honeymelon License**: Honeymelon itself is licensed under the GNU General Public License v3.0 or later (GPL-3.0-or-later). See [LICENSE](../../LICENSE) for the full GPL v3 text.
+
+**Third-Party Dependencies**: The following components are used under their respective licenses and remain under their original licenses as permitted by GPL v3.
+
 ---
 
 ## FFmpeg
@@ -17,9 +21,9 @@ This file contains the licenses and notices for third-party software included wi
 
 FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video.
 
-**Usage in Honeymelon**: Honeymelon executes FFmpeg as a separate, external process (out-of-process). There is no static or dynamic linking to FFmpeg libraries. This approach ensures LGPL compliance while allowing Honeymelon to be distributed under its own license.
+**Usage in Honeymelon**: Honeymelon (GPL v3) executes FFmpeg as a separate, external process (out-of-process). There is no static or dynamic linking to FFmpeg libraries. This approach maintains clear license boundaries while ensuring full GPL v3 and LGPL compatibility.
 
-**License Notice**: See [LICENSES/FFMPEG-LGPL.txt](LICENSES/FFMPEG-LGPL.txt) for the complete LGPL license text.
+**License Notice**: See [LICENSES/FFMPEG-LGPL.txt](../../LICENSES/FFMPEG-LGPL.txt) for the complete LGPL license text.
 
 **Patent Notice**: Some codecs may be subject to patent claims in certain jurisdictions. Honeymelon primarily uses hardware encoders provided by macOS (VideoToolbox) which are covered by Apple's licensing arrangements.
 
@@ -183,4 +187,4 @@ For questions about licensing, please contact the project maintainers.
 
 ---
 
-**Last Updated**: 2024-10-30
+**Last Updated**: 2025-01-15

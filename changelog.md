@@ -229,7 +229,6 @@ This is the initial public release. See [Unreleased] section for complete featur
 - AGENTS.md for commit/PR guidelines
 - THIRD_PARTY_NOTICES.md for dependencies
 - LICENSE_COMPLIANCE.md for LGPL compliance details
-- COMMERCIAL_LICENSE.md for alternative licensing
 - README now highlights the Apple Silicon-focused packaging, bundled arm64 FFmpeg sidecars, and adds a release checklist step to verify their architecture.
 
 ### Known Limitations

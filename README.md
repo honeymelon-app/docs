@@ -43,7 +43,6 @@ docs/
 │
 └── legal/                   # Legal documentation
     ├── license-compliance.md
-    ├── commercial-license.md
     └── third-party-notices.md
 
 ```
