@@ -8,12 +8,21 @@ This directory contains the complete documentation for Honeymelon, built with [V
 docs/
 ├── .vitepress/              # VitePress configuration
 │   ├── config.ts           # Site configuration
-│   └── theme/              # Custom theme (if needed)
+│   ├── env.d.ts            # Type declarations
+│   └── theme/              # Custom theme
 ├── public/                  # Static assets
-│   └── logo.svg            # Site logo
+│   ├── favicon.ico
+│   ├── favicon.svg
+│   ├── favicon-16x16.png
+│   ├── favicon-32x32.png
+│   └── logo.svg
 ├── index.md                 # Homepage
 ├── changelog.md             # Version history
-├── roadmap.md               # Product roadmap
+├── ROADMAP.md               # Product roadmap
+├── FFMPEG_PIPELINE_TESTS.md # FFmpeg pipeline test notes
+│
+├── adr/                     # Architecture Decision Records
+│   └── README.md
 │
 ├── guide/                   # User guides
 │   ├── what-is-honeymelon.md
@@ -22,23 +31,31 @@ docs/
 │   ├── presets.md
 │   ├── batch-processing.md
 │   ├── preferences.md
+│   ├── privacy.md
+│   ├── support.md
 │   ├── supported-formats.md
 │   └── troubleshooting.md
 │
 ├── architecture/            # Technical architecture
 │   ├── overview.md
 │   ├── pipeline.md
+│   ├── pipeline-internals.md
 │   ├── ffmpeg.md
+│   ├── adr.md
 │   ├── state.md
 │   └── tech-stack.md
 │
 ├── development/             # Development guides
 │   ├── contributing.md
 │   ├── build.md
+│   ├── building.md
 │   ├── testing.md
 │   ├── agents.md
 │   ├── claude.md
-│   └── enhancement-plan.md
+│   ├── api-reference.md
+│   ├── deployment.md
+│   ├── enhancement-plan.md
+│   └── roadmap.md
 │
 └── legal/                   # Legal documentation
     ├── license-compliance.md
